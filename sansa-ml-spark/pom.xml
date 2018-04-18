@@ -46,21 +46,20 @@
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-core_${scala.binary.version}</artifactId>
-			<version>${spark.version}</version>
 		</dependency>
 
 		<!-- Apache Spark SQL -->
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-sql_${scala.binary.version}</artifactId>
-			<version>${spark.version}</version>
 		</dependency>
+
 		<!-- Apache Spark MLlib -->
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-mllib_${scala.binary.version}</artifactId>
-			<version>${spark.version}</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/com.github.fommil.netlib/all -->
 		<dependency>
 			<groupId>com.github.fommil.netlib</groupId>
@@ -99,11 +98,6 @@
 			<artifactId>apache-jena-libs</artifactId>
 			<type>pom</type>
 			<version>${jena.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.scopt</groupId>
-			<artifactId>scopt_${scala.binary.version}</artifactId>
-			<version>3.5.0</version>
 		</dependency>
 
 		<!-- BigDL Library -->
@@ -238,6 +232,10 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.scalastyle</groupId>
+				<artifactId>scalastyle-maven-plugin</artifactId>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -257,7 +255,6 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-shade-plugin</artifactId>
-						<version>2.4.3</version>
 						<executions>
 							<execution>
 								<phase>package</phase>
@@ -385,45 +382,6 @@
 		</profile>
 
 	</profiles>
-	<repositories>
-		<repository>
-			<id>oss-sonatype</id>
-			<name>oss-sonatype</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>apache-snapshot</id>
-			<name>Apache repository (snapshots)</name>
-			<url>https://repository.apache.org/content/repositories/snapshots/</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>maven.aksw.internal</id>
-			<name>AKSW Release Repository</name>
-			<url>http://maven.aksw.org/archiva/repository/internal</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>maven.aksw.snapshots</id>
-			<name>AKSW Snapshot Repository</name>
-			<url>http://maven.aksw.org/archiva/repository/snapshots</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
+
 
 </project>
